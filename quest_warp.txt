@@ -1,0 +1,70 @@
+// RAGNAROK NPC PARA HORMIGUERO RAGNAROK ONLINE DERECHOS RESERVADOS
+prontera,141,180,4   script   Satan Fight   811,{
+	set .nombre$, "[Mercenario]";
+	mes .nombre$;
+	mes "Psssssssssss" ;
+	next;
+	mes "ven un momento......";
+	next;
+	mes "Te Tengo Una Mision";
+	mes "Esta Mision es Solo Para los Mas Valientes";
+	next;
+	mes "¿Estas Listo?"
+	menu "Segurisimo",-,"No, Aun No", M_leave
+	
+	switch (SatanEvent) {
+		//Caso 0 Cuando Aun no Tienes los Items
+		case 0:
+			mes .nombre$;
+			mes "Bueno Como no eres un Cobarde te Encargare Esta Mision";
+			next;
+			mes .nombre$;
+			mes "Claro, no Sera Gratis Primero Debes Darme:";
+			mes "10 Eon Ticket";
+			next;
+			mes .nombre$;
+			mes "Cuando Los Traigas Hablaremos de esa Mision";
+			mes "Por cierto lo que te espera no es nada Facil";
+			set SatanEvent, 1;
+			break;
+			
+		case 1:
+			mes "¿Ya me has Traido lo  que te pedi?";
+			next;
+			switch(select("Si:No...")){
+				case 1:
+					mes .nombre$;
+					if(countitem(26202) => 10){
+						mes "OHH!! Muchas Gracias jejej Ahora te Contare Sobre La Mision";
+						delitem 26202, 10;
+						next;
+						mes "Te Contare Sobre La Mision";
+						mes "Te Debes de enfrentar al Todo Poderoso Maestro de la Oscuridad";
+						next;
+						mes "Pero Este Solo Aparece cada Dos Horas"						
+						set SatanEvent, 2;
+					} else{
+						mes "........";
+						next;
+						mes "No me Hagas Perder el Tiempo";
+					}					
+					break;
+				case 2:
+					mes .nombre$;
+					mes "Bueno Vuelve Cuando Tengas Mis Objetos";
+					break;
+			} //FIN Swtich 
+			break;
+			
+		case 2:
+			mes "Vamos por el";
+			if (Sexo == 0){
+				announce "La Heroina [" +strcharinfo(0) +"] se ha Decidido Enfentar al Todo Poderoso";
+			}else{
+				announce "El Heroe [" +strcharinfo(0) +"] se ha Decidido Enfrentar al Todo Poderoso";
+			}
+			next;
+			warp Mapa,coordenada1,coordenada2;
+	}
+	
+}
