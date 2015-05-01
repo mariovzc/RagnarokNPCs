@@ -1,4 +1,5 @@
 // RAGNAROK NPC PARA HORMIGUERO RAGNAROK ONLINE DERECHOS RESERVADOS
+// MARIO VIZCAINO 30/04/2015 BARRANQUILLA - COLOMBIA.
 prontera,141,180,4   script   Satan Fight   811,{
 	set .nombre$, "[Mercenario]";
 	mes .nombre$;
@@ -64,7 +65,7 @@ prontera,141,180,4   script   Satan Fight   811,{
 				announce "El Heroe [" +strcharinfo(0) +"] se ha Decidido Enfrentar al Todo Poderoso";
 			}
 			next;
-			warp Mapa,coordenada1,coordenada2;
+			warp man_fild01,37,233;
 	}
 	
 }
